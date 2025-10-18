@@ -1,0 +1,155 @@
+* {
+    accent-color: rgb(86, 49, 236);
+    secondary-color: rgb(17, 6, 114);
+    bg-color: rgb(3, 5, 16);
+    text-color: rgb(251, 248, 251);
+    input-color: rgb(196, 1, 98);
+}
+
+configuration {
+    modes: "drun,filebrowser,run";
+    timeout {
+        action: "kb-cancel";
+        delay:  0;
+    }
+    filebrowser {
+        directories-first: true;
+        sorting-method:    "name";
+    }
+}
+
+element {
+    orientation: horizontal;
+    children: [ element-icon, element-text ];
+    spacing: 16px;
+}
+
+window {
+    border-radius: 24px;
+}
+
+mainbox {
+    children: [inputbar, message, listview, mode-switcher];
+}
+
+window, mainbox, listview, element, element-text, element-icon, scrollbar, message, mode-switcher {
+    background-color: @bg-color;
+}
+
+scrollbar {
+    handle-color: @accent-color;
+}
+
+element, element-text, inputbar, prompt {
+    text-color: @text-color;
+}
+
+element-icon {
+    size: 1.6em;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+element selected {
+    background-color: red;
+}
+
+element-text selected {
+    background-color: @secondary-color;
+}
+
+element-icon selected {
+    background-color: @secondary-color;
+}
+
+listview {
+    scrollbar:    true;
+    padding:      16px;
+    fixed-height: 0;
+    border:       0px;
+    border-color: @accent-color;
+    spacing:      2px;
+}
+
+element.selected.normal {
+    background-color: @secondary-color;
+    text-color:       @text-color;
+}
+element.selected.urgent {
+    background-color: @secondary-color;
+    text-color:       @text-color;
+}
+element.selected.active {
+    background-color: @secondary-color;
+    text-color:       @text-color;
+}
+
+element.normal.normal {
+    background-color: @bg-color;
+    text-color:       @text-color;
+}
+element.normal.urgent {
+    background-color: @bg-color;
+    text-color:       @text-color;
+}
+element.normal.active {
+    background-color: @bg-color;
+    text-color:       @text-color;
+}
+
+element.alternate.normal {
+    background-color: @bg-color;
+    text-color:       @text-color;
+}
+element.alternate.urgent {
+    background-color: @bg-color;
+    text-color:       @text-color;
+}
+element.alternate.active {
+    background-color: @bg-color;
+    text-color:       @text-color;
+}
+
+inputbar {
+    children: [ textbox-prompt-colon, entry ];
+}
+entry {
+    placeholder: "";
+    blink: true;
+    text-color: @input-color;
+}
+textbox-prompt-colon {
+    str: " :";
+}
+textbox-prompt-colon, entry, case-indicator {
+    text-color: @input-color;
+}
+
+mode-switcher, message {
+	border: 0px;
+	border-color: @accent-color;
+}
+
+message {
+    margin: 16px 0px 0px 0px;
+}
+
+textbox {
+	background-color: @bg-color;
+	text-color: @input-color;
+	padding: 5px;
+}
+
+button {
+    background-color: @bg-color;
+	text-color: @text-color;
+	padding: 6px;
+    border-radius: 24px;
+}
+
+button selected {
+	background-color: rgba(19, 8, 120, 0.5);
+    text-color: @text-color;
+}

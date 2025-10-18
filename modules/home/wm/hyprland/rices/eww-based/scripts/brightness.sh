@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+MAX_BRIGHNTESS=`brightnessctl -m max`
+
+up() {
+    current=`get`
+    change=`echo "scale=0; $1 * $MAX_BRIGHNTESS / 100" | bc -l`
+    value=`echo $current + $change | bc -l`
+    set_brightness $value
+}
+
+down() {
+    current=`get`
+    change=`echo "scale=0; $1 * $MAX_BRIGHNTESS / 100" | bc -l`
+    value=`echo $current - $change | bc -l`
+    set_brightness $value
+}
+
+
+get() {
+    echo `brightnessctl -m get`
+}
+
+get_percentage() {
+    current=`get`
+    echo `echo "scale=0; $current * 100 / $MAX_BRIGHNTESS" | bc -l`
+}
+
+set_percentage() {
+    value=`echo "scale=0; $1 * $MAX_BRIGHNTESS / 100" | bc -l`
+    set_brightness $value
+}
+
+
+icon() {
+    echo "󰃠"
+}
+
+set_brightness() {
+    brightnessctl -q set $1
+}
+
+
+[ "$1" = "get" ] && get && exit
+[ "$1" = "get-percentage" ] && get_percentage && exit
+[ "$1" = "set" ] && set_brightness $2 && exit
+[ "$1" = "set-percentage" ] && set_percentage $2 && exit
+[ "$1" = "up" ] && up $2 && exit
+[ "$1" = "down" ] && down $2 && exit
+[ "$1" = "icon" ] && icon && exit
