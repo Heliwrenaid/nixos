@@ -84,10 +84,10 @@ in
     exec-once = [
         "source ~/.bashrc"
         "lxqt-policykit-agent"
+        "scripts-swayidle ${run-swaylock}/bin/run-swaylock ${toString swaylockProps.lockTimeout} ${toString swaylockProps.screenOffInterval}"
         "swww init"
         "eww daemon"
         "eww open mybar"
-        "scripts-swayidle-script ${run-swaylock} ${toString swaylockProps.lockTimeout} ${toString swaylockProps.screenOffInterval} &"
         "dunst"
         "copyq --start-server"
         "scripts-swww-randomize ${swwProps.wallpaperDir} &> /dev/null &"
@@ -95,8 +95,8 @@ in
     ];
 
     monitor = [
-      "HDMI-A-1, 1920x1080@120, 0x0, 1"
-      "DP-3, 1920x1080@60, 1920x0, 1"
+      "DP-3, 1920x1080@120, 0x0, 1"
+      "HDMI-A-1, 1920x1080@60, 1920x0, 1"
     ];
 
     env = [
