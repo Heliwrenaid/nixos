@@ -166,6 +166,10 @@ in
   # https://discourse.nixos.org/t/error-gdbus-error-org-freedesktop-dbus-error-serviceunknown-the-name-ca-desrt-dconf-was-not-provided-by-any-service-files/29111
   programs.dconf.enable = true;
 
+  # Mullvad
+  services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.package = pkgs.mullvad-vpn; # GUI
+
   # ----------------- Packages -------------------
 
   environment.systemPackages = with pkgs; [
