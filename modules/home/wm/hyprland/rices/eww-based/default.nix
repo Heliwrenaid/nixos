@@ -85,7 +85,7 @@ in
         "source ~/.bashrc"
         "lxqt-policykit-agent"
         "scripts-swayidle ${run-swaylock}/bin/run-swaylock ${toString swaylockProps.lockTimeout} ${toString swaylockProps.screenOffInterval}"
-        "swww init"
+        "setsid swww-daemon &"
         "eww daemon"
         "eww open mybar"
         "dunst"
@@ -180,7 +180,7 @@ in
     pipewire
     wireplumber
     networkmanager
-    rofi-wayland
+    rofi
     eww
     swww
     copyq
