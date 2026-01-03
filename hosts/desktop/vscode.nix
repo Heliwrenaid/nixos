@@ -33,7 +33,6 @@ let
     ms-vsliveshare.vsliveshare
     redhat.vscode-yaml
     rust-lang.rust-analyzer
-    serayuzgur.crates
     tamasfe.even-better-toml
     tomoki1207.pdf
     twxs.cmake
@@ -42,7 +41,6 @@ let
     vadimcn.vscode-lldb
     vue.volar
     zhuangtongfa.material-theme
-    zxh404.vscode-proto3
   ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "dart-code";
@@ -73,18 +71,6 @@ let
         publisher = "Gruntfuggly";
         version = "0.0.226";
         sha256 = "0yrc9qbdk7zznd823bqs1g6n2i5xrda0f9a7349kknj9wp1mqgqn";
-      }
-      {
-        name = "remote-ssh";
-        publisher = "ms-vscode-remote";
-        version = "0.123.2025121615";
-        sha256 = "0vbvk9v8imcl27nbp9paxbwgjiljr8d26rndca7ihw7x1nzidm85";
-      }
-      {
-        name = "makefile-tools";
-        publisher = "ms-vscode";
-        version = "0.13.13";
-        sha256 = "16prvpiyn3yrj7d4r5wld0pvcxjwy1bk9rwx3bygphwg5n5w1fch";
       }
       {
         name = "remote-explorer";
@@ -123,16 +109,22 @@ let
         sha256 = "0l3si78il7ja6621991nljjvvywwkwfnnix9jz5s8y0il2cfq9y9";
       }
       {
-        name = "vscodeintellicode";
-        publisher = "VisualStudioExptTeam";
-        version = "1.3.2";
-        sha256 = "1yy1fb1marblz6n5rvwyjn3nwyfgzwg0ybyvh9ikwa2qgp4v2dyv";
+        name = "tailwind-documentation";
+        publisher = "alfredbirk";
+        version = "0.1.16";
+        sha256 = "03yyranny5pjdnk0m3hh4qwi80flcz1gy7bf8ml76lc9f1d7ybl4";
       }
       {
-        name = "intellicode-api-usage-examples";
-        publisher = "VisualStudioExptTeam";
-        version = "0.2.9";
-        sha256 = "0x9lrdz90xl78bg8h4v2rxbsla6rsmdz5zpxy8nicsy1cbwl647k";
+        name = "vscode-buf";
+        publisher = "bufbuild";
+        version = "0.8.1";
+        sha256 = "0zz3basx6gwb06gdc66h0cnq612l3vlziqaaxcz641krpjzbb4d4";
+      }
+      {
+        name = "crates-io";
+        publisher = "BarbossHack";
+        version = "0.7.6";
+        sha256 = "0ggmrsdx100fdbf1lmz13hmw743yr4b5rqrm7sjzr9z5mgzb0r3i";
       }
     ])
     ++ [

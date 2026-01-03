@@ -176,6 +176,7 @@ in
     # stable channel
     amberol
     bat
+    buf
     chromium
     cmake
     config.boot.kernelPackages.perf
@@ -201,6 +202,7 @@ in
     patchelf
     pciutils
     photoqt
+    radeontop
     ripgrep
     telegram-desktop
     thunderbird
@@ -209,7 +211,6 @@ in
     vscode-with-extensions
     wget
     zlib
-    radeontop
 
     # unstable channel
     unstable.joplin-desktop
