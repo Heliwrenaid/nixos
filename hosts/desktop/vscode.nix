@@ -19,7 +19,6 @@ let
         };
   extensions = (with pkgs.vscode-extensions; [
     arrterian.nix-env-selector
-    arrterian.nix-env-selector
     bbenoist.nix
     bmewburn.vscode-intelephense-client
     bradlc.vscode-tailwindcss
@@ -29,17 +28,9 @@ let
     mhutchie.git-graph
     mkhl.direnv
     ms-azuretools.vscode-docker
-    ms-python.python
-    ms-python.vscode-pylance
-    ms-toolsai.jupyter
-    ms-toolsai.jupyter-keymap
-    ms-toolsai.jupyter-renderers
-    ms-toolsai.vscode-jupyter-cell-tags
-    ms-toolsai.vscode-jupyter-slideshow
     ms-vscode-remote.remote-containers
     ms-vscode.live-server
     ms-vsliveshare.vsliveshare
-    redhat.java
     redhat.vscode-yaml
     rust-lang.rust-analyzer
     serayuzgur.crates
@@ -82,24 +73,6 @@ let
         publisher = "Gruntfuggly";
         version = "0.0.226";
         sha256 = "0yrc9qbdk7zznd823bqs1g6n2i5xrda0f9a7349kknj9wp1mqgqn";
-      }
-      {
-        name = "solidity";
-        publisher = "JuanBlanco";
-        version = "0.0.174";
-        sha256 = "1f9jqjcvww2i7vn3iqwk5wsdca8zwsi1a46sxig0py3y35qz5wgr";
-      }
-      {
-        name = "smalise";
-        publisher = "LoyieKing";
-        version = "0.0.12";
-        sha256 = "0pwdlhgz0jx9i6n16cyrrbxb5m5g8y61vyhv3ywn7a7hljnfx60r";
-      }
-      {
-        name = "debugpy";
-        publisher = "ms-python";
-        version = "2024.6.0";
-        sha256 = "0gq7gkf4mcq7ckfqmhc2ahv9ny8skl98kyx27zwyl1k2jpmxwlsn";
       }
       {
         name = "remote-ssh";
@@ -154,18 +127,6 @@ let
         publisher = "VisualStudioExptTeam";
         version = "0.2.8";
         sha256 = "1l1wjzbl5jjniyiqzlj23i3sl2xy5jsx97wsj3sbb6py0pfi4w39";
-      }
-      {
-        name = "latex-workshop";
-        publisher = "James-Yu";
-        version = "10.1.0";
-        sha256 = "09hw9jx7b3cldra8bvkzksb6a3rl6fckw7gabii5nqp1wp9nd1ws";
-      }
-      {
-        name = "vscode-ltex";
-        publisher = "valentjn";
-        version = "13.1.0";
-        sha256 = "15qm97i9l65v3x0zxl1895ilazz2jk2wmizbj7kmds613jz7d46c";
       }
     ])
     ++ [
