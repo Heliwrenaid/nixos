@@ -9,8 +9,8 @@ let
           mktplcRef = {
             name = "continue";
             publisher = "Continue";
-          version = "1.1.40";
-            sha256 = "sha256-P4rhoj4Juag7cfB9Ca8eRmHRA10Rb4f7y5bNGgVZt+E=";
+            version = "1.3.28";
+            sha256 = "sha256-Yx82pjTOJIYYtFk1q6M+0fdKYqIW3OfUeQzB9tos9/g=";
             arch = "linux-x64";
           };
           # Patch obtained from: https://github.com/continuedev/continue/issues/821
@@ -47,14 +47,14 @@ let
       {
         name = "dart-code";
         publisher = "Dart-Code";
-        version = "3.119.20250918";
-        sha256 = "1ifzsissqbak95qb7k598zzx1mz3g8w6vafl3kjkd3x9myk3d5hk";
+        version = "3.127.20251229";
+        sha256 = "0f1kbnibc2zskf2abvqpqix94qps7dg7jg3bkcr4pqk3d6k4h19y";
       }
       {
         name = "flutter";
         publisher = "Dart-Code";
-        version = "3.119.20250901";
-        sha256 = "03rpmn3rpxl6yfg7l9pv12nph9zy2mwpjnvjy8jq3kcd3scf8qip";
+        version = "3.127.20251229";
+        sha256 = "1fwpi9kz9j49ds3gw2pilnjpf75kc45k9k03ly752msd4nmxi709";
       }
       {
         name = "rasi";
@@ -77,20 +77,26 @@ let
       {
         name = "remote-ssh";
         publisher = "ms-vscode-remote";
-        version = "0.112.2024050815";
-        sha256 = "0b8j2iv7fd9nzmlfm1xh5bfhdffdinb98zcq1jvfizlckh308y3d";
+        version = "0.123.2025121615";
+        sha256 = "0vbvk9v8imcl27nbp9paxbwgjiljr8d26rndca7ihw7x1nzidm85";
+      }
+      {
+        name = "makefile-tools";
+        publisher = "ms-vscode";
+        version = "0.13.13";
+        sha256 = "16prvpiyn3yrj7d4r5wld0pvcxjwy1bk9rwx3bygphwg5n5w1fch";
       }
       {
         name = "remote-explorer";
         publisher = "ms-vscode";
-        version = "0.5.2024031109";
-        sha256 = "1r8wdlz7p0k4kzfcmqiizns043lhghf5v34sf0gays02x8x9xh5p";
+        version = "0.6.2025081809";
+        sha256 = "10rsnl5yk08mhcwg5j7s2xsawd7v2ilcgg2rm9v904v3nd2qi8xv";
       }
       {
         name = "material-icon-theme";
         publisher = "PKief";
-        version = "5.2.0";
-        sha256 = "0dkv6rnixnj4rwz9fb8hmn6m3mrgm80x3i07rxf477m9rgwp84iv";
+        version = "5.30.0";
+        sha256 = "1n6wm3vf5v3bgx7y6d3v8xd445rdkxfkpp445y8kwas16rm6mmr9";
       }
       {
         name = "autoimport";
@@ -101,32 +107,32 @@ let
       {
         name = "code-spell-checker";
         publisher = "streetsidesoftware";
-        version = "3.0.1";
-        sha256 = "0i76gf7zr0j4dr02zmxwfphk6yy8rvlj9rzq3k8pvnlfzkmh9ri9";
+        version = "4.4.0";
+        sha256 = "0apnryj2jpbd1z6015xkj7f492cmk27gilmvi930nnkf2wgsdmp2";
       }
       {
         name = "code-spell-checker-polish";
         publisher = "streetsidesoftware";
-        version = "2.1.2";
-        sha256 = "0d905qig9dw73gk9z50ar1g914c5fcpyaqn8p22g2hxfl0sfhcfk";
+        version = "2.1.4";
+        sha256 = "0mms6mr64jwv7s8wivhnxl370nmq6bxpfpm9s9z489b6dk20h5na";
       }
       {
         name = "tauri-vscode";
         publisher = "tauri-apps";
-        version = "0.2.6";
-        sha256 = "03nfyiac562kpndy90j7vc49njmf81rhdyhjk9bxz0llx4ap3lrv";
+        version = "0.2.9";
+        sha256 = "0l3si78il7ja6621991nljjvvywwkwfnnix9jz5s8y0il2cfq9y9";
       }
       {
         name = "vscodeintellicode";
         publisher = "VisualStudioExptTeam";
-        version = "1.3.1";
-        sha256 = "0zl3hm5i769aqi16g236mpadlkxsh09872b5hc7j9js2xm051hv4";
+        version = "1.3.2";
+        sha256 = "1yy1fb1marblz6n5rvwyjn3nwyfgzwg0ybyvh9ikwa2qgp4v2dyv";
       }
       {
         name = "intellicode-api-usage-examples";
         publisher = "VisualStudioExptTeam";
-        version = "0.2.8";
-        sha256 = "1l1wjzbl5jjniyiqzlj23i3sl2xy5jsx97wsj3sbb6py0pfi4w39";
+        version = "0.2.9";
+        sha256 = "0x9lrdz90xl78bg8h4v2rxbsla6rsmdz5zpxy8nicsy1cbwl647k";
       }
     ])
     ++ [
