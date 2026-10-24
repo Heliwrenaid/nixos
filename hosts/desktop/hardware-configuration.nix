@@ -9,7 +9,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "ahci" "xhci_pci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" "ath12k" ];
   boot.extraModulePackages = [ ];
   # boot.kernelPackages= pkgs.linuxPackages_6_13;

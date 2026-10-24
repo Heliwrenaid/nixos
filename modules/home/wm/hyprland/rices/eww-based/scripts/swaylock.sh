@@ -3,6 +3,7 @@
 wallpaper="$1"
 
 swaylock \
+	-d \
     -f \
     -e \
     -i $wallpaper \

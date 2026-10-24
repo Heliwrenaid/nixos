@@ -70,7 +70,7 @@ in
   users.users.${settings.user} = {
     isNormalUser = true;
     description = "${settings.user}";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
   nix.settings.trusted-users = [ "root" "${settings.user}" ];
@@ -92,17 +92,10 @@ in
     defaultSession = if settings.wm == "hyprland" then "hyprland" else "";
   };
 
-  # Docker
-  virtualisation.docker.enable = true;
-
   # Ollama with AMD graphics card acceleration
   services.ollama = {
     enable = true;
-    acceleration = "rocm";
-    environmentVariables = {
-      HCC_AMDGPU_TARGET = "gfx1100";
-      HSA_OVERRIDE_GFX_VERSION = "11.0.0";
-    };
+    package = pkgs.ollama-rocm;
   };
 
   # Audio
@@ -170,6 +163,17 @@ in
   services.mullvad-vpn.enable = true;
   services.mullvad-vpn.package = pkgs.mullvad-vpn; # GUI
 
+  # Virtualisation
+  virtualisation.docker.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+    };
+  };
+
   # ----------------- Packages -------------------
 
   environment.systemPackages = with pkgs; [
@@ -204,9 +208,12 @@ in
     photoqt
     radeontop
     ripgrep
+    seahorse
+    spotify
     telegram-desktop
     thunderbird
     vim
+    virt-manager
     vlc
     vscode-with-extensions
     wget
@@ -214,6 +221,8 @@ in
 
     # unstable channel
     unstable.joplin-desktop
+
+    inputs.opencode.packages.${pkgs.system}.default
   ];
 
   # ----------------- Home Manger ----------------
@@ -231,5 +240,6 @@ in
   # https://github.com/hyprwm/Hyprland/issues/2727
   security.pam.services.swaylock = if settings.wm == "hyprland" then { } else { };
 
-
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.sddm.enableGnomeKeyring = true;
 }

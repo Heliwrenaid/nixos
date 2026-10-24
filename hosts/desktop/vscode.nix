@@ -1,22 +1,6 @@
 { pkgs, ... }:
 
 let
-  # Workaround for installing continue extension
-  # https://github.com/Ifaen/NixOS/blob/82fafec9e655ae652e3193514cbc90377dd6e36e/software/vscode/extensions.nix
-  continue =
-        pkgs.vscode-utils.buildVscodeMarketplaceExtension
-        {
-          mktplcRef = {
-            name = "continue";
-            publisher = "Continue";
-            version = "1.3.28";
-            sha256 = "sha256-Yx82pjTOJIYYtFk1q6M+0fdKYqIW3OfUeQzB9tos9/g=";
-            arch = "linux-x64";
-          };
-          # Patch obtained from: https://github.com/continuedev/continue/issues/821
-          nativeBuildInputs = [pkgs.autoPatchelfHook];
-          buildInputs = [pkgs.stdenv.cc.cc.lib];
-        };
   volar =
         pkgs.vscode-utils.buildVscodeMarketplaceExtension
         {
@@ -44,6 +28,7 @@ let
     ms-azuretools.vscode-docker
     ms-vscode-remote.remote-containers
     ms-vscode.live-server
+    ms-vscode-remote.remote-ssh
     ms-vsliveshare.vsliveshare
     redhat.vscode-yaml
     rust-lang.rust-analyzer
@@ -140,7 +125,6 @@ let
       }
     ])
     ++ [
-      continue
       volar
     ];
 

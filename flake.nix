@@ -8,6 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
+    opencode.url = "github:anomalyco/opencode/v1.18.34";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
