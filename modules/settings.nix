@@ -10,7 +10,7 @@
           lockTimeout = 180;
           screenOffInterval = 20;
         };
-        sww = {
+        awww = {
           wallpaperDir = "~/Pictures/Wallpapers/active/";
         };
       };

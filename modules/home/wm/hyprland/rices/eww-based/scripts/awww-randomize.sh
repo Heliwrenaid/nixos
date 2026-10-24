@@ -3,14 +3,14 @@
 set_random_wall() {
 	ls "$1" | sort -R | tail -$N | while read image; do
 		if [ ! `get_actual_wallpaper` = "$image" ]; then
-			swww img "${1%/}/$image"
+			awww img "${1%/}/$image"
 			break
 		fi
 	done
 }
 
 get_actual_wallpaper() {
-	echo `swww query | cut -d ',' -f3 | cut -d ':' -f3 | head -n 1 | tr -d ' " '`
+	echo `awww query | cut -d ',' -f3 | cut -d ':' -f3 | head -n 1 | tr -d ' " '`
 }
 
 
@@ -29,11 +29,11 @@ if [[ ! -d "$dir" ]]; then
 fi
 
 # Edit bellow to control the images transition
-export SWWW_TRANSITION_FPS=60
-export SWWW_TRANSITION_STEP=2
-export SWWW_TRANSITION_ANGLE=30
-export SWWW_TRANSITION_DURATION=5
-export SWWW_TRANSITION=random
+export AWWW_TRANSITION_FPS=60
+export AWWW_TRANSITION_STEP=2
+export AWWW_TRANSITION_ANGLE=30
+export AWWW_TRANSITION_DURATION=5
+export AWWW_TRANSITION=random
 
 if [ "$2" = "change" ]; then
 	set_random_wall "$dir"

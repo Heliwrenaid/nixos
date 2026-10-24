@@ -27,8 +27,8 @@ let
   scripts-swaylock = pkgs.writeShellScriptBin "scripts-swaylock" ''
     ${./swaylock.sh} $@
   '';
-  scripts-swww-randomize = pkgs.writeShellScriptBin "scripts-swww-randomize" ''
-    ${./swww-randomize.sh} $@
+  scripts-awww-randomize = pkgs.writeShellScriptBin "scripts-awww-randomize" ''
+    ${./awww-randomize.sh} $@
   '';
   scripts-volume = pkgs.writeShellScriptBin "scripts-volume" ''
     ${./volume.sh} $@
@@ -50,7 +50,7 @@ in {
     scripts-search-icon
     scripts-swayidle
     scripts-swaylock
-    scripts-swww-randomize
+    scripts-awww-randomize
     scripts-volume
     scripts-widget
     scripts-wifi

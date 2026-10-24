@@ -1,20 +1,6 @@
 { pkgs, ... }:
 
 let
-  volar =
-        pkgs.vscode-utils.buildVscodeMarketplaceExtension
-        {
-          mktplcRef = {
-            name = "volar";
-            publisher = "Vue";
-            version = "2.2.12";
-            sha256 = "sha256-cQxDoKDfzifcGTkhS8rC+JUQofbxMfXmkJF1CwiU1nc=";
-            arch = "linux-x64";
-          };
-          # Patch obtained from: https://github.com/continuedev/continue/issues/821
-          nativeBuildInputs = [pkgs.autoPatchelfHook];
-          buildInputs = [pkgs.stdenv.cc.cc.lib];
-        };
   extensions = (with pkgs.vscode-extensions; [
     arrterian.nix-env-selector
     bbenoist.nix
@@ -37,6 +23,7 @@ let
     twxs.cmake
     usernamehw.errorlens
     vadimcn.vscode-lldb
+    vue.volar
     zhuangtongfa.material-theme
   ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
@@ -123,10 +110,7 @@ let
         version = "0.7.6";
         sha256 = "0ggmrsdx100fdbf1lmz13hmw743yr4b5rqrm7sjzr9z5mgzb0r3i";
       }
-    ])
-    ++ [
-      volar
-    ];
+    ]);
 
   vscode-with-extensions = pkgs.vscode-with-extensions.override { vscodeExtensions = extensions; };
 

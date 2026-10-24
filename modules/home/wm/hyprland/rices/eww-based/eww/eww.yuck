@@ -84,7 +84,7 @@
 (defpoll time :interval "5s"
   "date '+%H:%M %b %d'")
 (defwidget Timedate []
-  (eventbox :orientation "horizontal"
+  (eventbox
        :halign "center"
        :class "time"
        :onclick "scripts-widget open mycalendar"

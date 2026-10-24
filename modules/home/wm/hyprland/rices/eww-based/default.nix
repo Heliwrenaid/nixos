@@ -2,7 +2,7 @@
 
 let
   profile = settings.hyprland.rices.ewwBased;
-  swwProps = profile.sww;
+  awwwProps = profile.awww;
   swaylockProps = profile.swaylock;
 
   run-swaylock = pkgs.writeShellScriptBin "run-swaylock" ''
@@ -72,7 +72,7 @@ in
 
         # Other
         ",Print, exec, scripts-screenshot"
-        "$mainMod, I, exec, scripts-swww-randomize ${swwProps.wallpaperDir} change &> /dev/null"
+        "$mainMod, I, exec, scripts-awww-randomize ${awwwProps.wallpaperDir} change &> /dev/null"
         # ",XF86MonBrightnessUp, exec, scripts-brightness up 10"
         # ",XF86MonBrightnessDown, exec, scripts-brightness down 10"
     ];
@@ -85,12 +85,12 @@ in
         "source ~/.bashrc"
         "lxqt-policykit-agent"
         "scripts-swayidle ${run-swaylock}/bin/run-swaylock ${toString swaylockProps.lockTimeout} ${toString swaylockProps.screenOffInterval}"
-        "setsid swww-daemon &"
+        "setsid awww-daemon &"
         "eww daemon"
         "eww open mybar"
         "dunst"
         "copyq --start-server"
-        "scripts-swww-randomize ${swwProps.wallpaperDir} &> /dev/null &"
+        "scripts-awww-randomize ${awwwProps.wallpaperDir} &> /dev/null &"
         "spotifyd"
     ];
 
@@ -182,7 +182,7 @@ in
     networkmanager
     rofi
     eww
-    swww
+    awww
     copyq
     networkmanagerapplet
     brightnessctl
@@ -202,6 +202,7 @@ in
 
       gtk = {
         enable = true;
+        gtk4.theme = null;
         theme = {
           name = "Layan-Dark";
           package = pkgs.layan-gtk-theme;
